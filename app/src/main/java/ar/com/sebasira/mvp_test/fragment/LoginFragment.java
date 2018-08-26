@@ -3,6 +3,7 @@ package ar.com.sebasira.mvp_test.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,23 +14,25 @@ import android.widget.Toast;
 
 import ar.com.sebasira.mvp_test.R;
 import ar.com.sebasira.mvp_test.activity.MainActivity;
+import ar.com.sebasira.mvp_test.contract.LoginContract;
 import ar.com.sebasira.mvp_test.network.LoginAPI;
+import ar.com.sebasira.mvp_test.presenter.LoginPresenter;
 
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements LoginContract.View{
 
     private Button btnLogin;
     private EditText edtPass;
     private EditText edtUser;
 
-    private LoginAPI mLoginApi;
+    private LoginPresenter mLoginPresenter;
 
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mLoginApi = new LoginAPI();
+        mLoginPresenter = new LoginPresenter(this, new LoginAPI());
     }
 
     /* ON CREATE VIEW */
@@ -54,28 +57,39 @@ public class LoginFragment extends Fragment {
     private View.OnClickListener loginClicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String user = edtUser.getText().toString();
-            if (user.isEmpty()){
-                edtUser.setError("Usuario vacio");
-                return;
-            }
-
-            String pass = edtPass.getText().toString();
-            if (pass.isEmpty()){
-                edtPass.setError("Usuario vacio");
-                return;
-            }
-
-
-            if (mLoginApi.authenticate(user,pass)){
-                Intent intento = new Intent(getActivity(), MainActivity.class);
-                startActivity(intento);
-                getActivity().finish();
-            }else{
-                Toast.makeText(getActivity(), "Bad Credentials", Toast.LENGTH_SHORT).show();
-            }
-
+            mLoginPresenter.onLoginButtonClicked();
         }
     };
 
+    @Override
+    public String getUsername() {
+        return edtUser.getText().toString();
+    }
+
+    @Override
+    public String getPassword() {
+        return edtPass.getText().toString();
+    }
+
+    @Override
+    public void setUsernameError(@StringRes int resId) {
+        edtUser .setError(getString(resId));
+    }
+
+    @Override
+    public void setPasswordError(@StringRes int resId) {
+        edtPass.setError(getString(resId));
+    }
+
+    @Override
+    public void startMainActivity() {
+        Intent intento = new Intent(getActivity(), MainActivity.class);
+        startActivity(intento);
+        getActivity().finish();
+    }
+
+    @Override
+    public void showBadCredentials() {
+        Toast.makeText(getActivity(), "Bad Credentials", Toast.LENGTH_SHORT).show();
+    }
 }
