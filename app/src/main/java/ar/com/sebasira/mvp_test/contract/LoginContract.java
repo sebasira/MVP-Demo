@@ -2,6 +2,9 @@ package ar.com.sebasira.mvp_test.contract;
 
 import android.support.annotation.StringRes;
 
+/**
+ * http://www.uwanttolearn.com/android/refactor-current-code-to-mvp-android/#comment-57794
+ */
 public class  LoginContract {
 
     /**

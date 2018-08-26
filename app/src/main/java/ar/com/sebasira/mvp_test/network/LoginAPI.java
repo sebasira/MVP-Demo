@@ -1,5 +1,8 @@
 package ar.com.sebasira.mvp_test.network;
 
+/**
+ * http://www.uwanttolearn.com/android/refactor-current-code-to-mvp-android/#comment-57794
+ */
 public class LoginAPI {
 
     private String USERNAME = "sebasira";

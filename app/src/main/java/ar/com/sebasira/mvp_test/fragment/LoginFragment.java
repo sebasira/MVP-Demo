@@ -19,6 +19,9 @@ import ar.com.sebasira.mvp_test.network.LoginAPI;
 import ar.com.sebasira.mvp_test.presenter.LoginPresenter;
 
 
+/**
+ * http://www.uwanttolearn.com/android/refactor-current-code-to-mvp-android/#comment-57794
+ */
 public class LoginFragment extends Fragment implements LoginContract.View{
 
     private Button btnLogin;
