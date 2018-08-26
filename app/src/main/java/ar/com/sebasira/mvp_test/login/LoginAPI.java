@@ -1,4 +1,4 @@
-package ar.com.sebasira.mvp_test.network;
+package ar.com.sebasira.mvp_test.login;
 
 /**
  * http://www.uwanttolearn.com/android/refactor-current-code-to-mvp-android/#comment-57794

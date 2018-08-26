@@ -1,4 +1,4 @@
-package ar.com.sebasira.mvp_test.fragment;
+package ar.com.sebasira.mvp_test.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import ar.com.sebasira.mvp_test.R;
-import ar.com.sebasira.mvp_test.activity.MainActivity;
-import ar.com.sebasira.mvp_test.contract.LoginContract;
-import ar.com.sebasira.mvp_test.network.LoginAPI;
-import ar.com.sebasira.mvp_test.presenter.LoginPresenter;
+import ar.com.sebasira.mvp_test.home.MainActivity;
 
 
 /**

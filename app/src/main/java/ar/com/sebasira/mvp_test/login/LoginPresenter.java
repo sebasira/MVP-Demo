@@ -1,8 +1,6 @@
-package ar.com.sebasira.mvp_test.presenter;
+package ar.com.sebasira.mvp_test.login;
 
 import ar.com.sebasira.mvp_test.R;
-import ar.com.sebasira.mvp_test.contract.LoginContract;
-import ar.com.sebasira.mvp_test.network.LoginAPI;
 
 /**
  * http://www.uwanttolearn.com/android/refactor-current-code-to-mvp-android/#comment-57794

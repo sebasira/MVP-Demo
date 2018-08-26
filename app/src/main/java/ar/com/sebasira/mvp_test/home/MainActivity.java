@@ -1,4 +1,4 @@
-package ar.com.sebasira.mvp_test.activity;
+package ar.com.sebasira.mvp_test.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

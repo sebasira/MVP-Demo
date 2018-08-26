@@ -1,4 +1,4 @@
-package ar.com.sebasira.mvp_test.contract;
+package ar.com.sebasira.mvp_test.login;
 
 import android.support.annotation.StringRes;
 
