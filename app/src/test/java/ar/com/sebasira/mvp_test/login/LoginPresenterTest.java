@@ -64,11 +64,11 @@ public class LoginPresenterTest{
     @Test
     public void whenUsernameAndPasswordNotEmptyTestOnServerWithGoodCredentials() {
         String username = "sebasira";
-        String pass = "12345";
+        String pass = "123454";
         Mockito.when(mockedView.getUsername()).thenReturn(username);
         Mockito.when(mockedView.getPassword()).thenReturn(pass);
 
-        Mockito.when(mockedLoginApi.authenticate(username, pass)).thenReturn(true);
+        Mockito.when(mockedLoginApi.authenticate(username, pass)).thenReturn(false);
 
         mLoginPresenter.onLoginButtonClicked();
 
