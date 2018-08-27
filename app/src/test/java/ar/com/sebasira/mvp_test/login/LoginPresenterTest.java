@@ -68,7 +68,7 @@ public class LoginPresenterTest{
         Mockito.when(mockedView.getUsername()).thenReturn(username);
         Mockito.when(mockedView.getPassword()).thenReturn(pass);
 
-        Mockito.when(mockedLoginApi.authenticate(username, pass)).thenReturn(false);
+        Mockito.when(mockedLoginApi.authenticate(username, pass)).thenReturn(true);
 
         mLoginPresenter.onLoginButtonClicked();
 
